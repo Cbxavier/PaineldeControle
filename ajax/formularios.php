@@ -20,7 +20,7 @@
     }
 
     $info = array('assunto' =>$assunto, 'corpo'=>$corpo);
-    $mail = new Email('smtp.hostinger.com.br', 'kaique.xavier@agencianexmedia.com.br', '@kaiqueXavier7', 'Kaique');
+    $mail = new Email('smtp.hostinger.com.br', 'kaique.xavier@agencianexmedia.com.br', 'insiraasenhaaqui', 'Kaique');
     $mail->addAdress('contato@agencianexmedia.com.br', 'Kaique');
     $mail->formatarEmail($info);
 
