@@ -1,7 +1,8 @@
 <div id="map"></div>
+<body onload="initialize();"/>
 <div class="contato-container">
 	<div class="center">
-		<form method="post" action="">
+		<form class="ajax-form" method="post" action="">
 			<input required type="text" name="nome" placeholder="Nome...">
 			<div></div>
 			<input required type="text" name="email" placeholder="E-mail..">

@@ -12,9 +12,9 @@
     <div class="overlay"></div>
     <div class="center">
 
-        <form method="post" action="">
+        <form class="ajax-form" method="post" action="">
             <h2>Seu melhor e-mail</h2>
-            <input type="email" name="email">
+            <input type="email" name="email" required="">
             <input type="hidden" name="identificador" value="form_home">
             <input type="submit" name="acao" value="Cadastrar">
         </form>
@@ -27,13 +27,13 @@
 
         <section class="descricao-autor">
             <div class="center">
-                <div class="w50 left">
-                        <h2><?php echo $infoSite['nome_autor']; ?></h2>
-                        <p><?php echo $infoSite['descricao']; ?></p>
+                <div class="w100 left">
+                    
+                    <h2 class="text-center"><img src="<?php echo INCLUDE_PATH; ?>img/imagem1.jpeg"> <?php echo $infoSite['nome_autor']; ?></h2>
+
+                    <p><?php echo $infoSite['descricao']; ?></p>
                 </div>
-                <div class="w50 left">
-                    <img class="right" src="<?php echo INCLUDE_PATH; ?>img/imagem1.jpeg" width="680" height="270"><!--Inserir imagem-->
-                </div>
+                
                 <div class="clear"></div>
             </div>
         </section>

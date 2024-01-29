@@ -1,7 +1,7 @@
 $(function() {
 
 
-    $('body').on('submit', 'form', function(){
+    $('body').on('submit', 'form.ajax-form', function(){
 
         var form = $(this);
 
@@ -22,7 +22,10 @@ $(function() {
                     $('.sucesso').fadeOut();
                 }, 3000);
             } else if (data.erro) {
-                // Adicione algum feedback para o usuário aqui
+               $('.erro').fadeIn();
+                setTimeout(function(){
+                    $('.erro').fadeOut();
+                }, 3000);
             }
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.log('AJAX error: ' + textStatus + ' : ' + errorThrown);

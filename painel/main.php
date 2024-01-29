@@ -67,7 +67,7 @@
                     <h2>Gestão de noticias</h2>
                     <a <?php selecionadoMenu('cadastrar-categorias'); ?>href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastrar Categorias</a>
                     <a <?php selecionadoMenu('gerenciar-categorias'); ?>href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
-                    <a <?php selecionadoMenu('cadastrar-noticias'); ?>href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastrar Noticias</a>
+                    <a <?php selecionadoMenu('cadastrar-noticia'); ?>href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticia">Cadastrar Noticias</a>
                     <a <?php selecionadoMenu('gerenciar-noticias'); ?>href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Noticias</a>
                     
                 </div><!--items-menu-->
@@ -101,5 +101,21 @@
     <script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL?>js/jquery.mask.js"></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL?>js/main.js"></script>
+    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'.tinymce'});</script> -->
+
+    <!-- Place the first <script> tag in your HTML's <head> -->
+    <script src="https://cdn.tiny.cloud/1/sp93hxiwl4psyjohtnk0ambabtyhtx8d2uhffmgt79up0vt3/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+    <script>
+      tinymce.init({
+        selector: '.tinymce',
+        plugins: "image",
+        height: 300,
+        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+      });
+
+    </script>
     </body>
 </html>

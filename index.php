@@ -50,6 +50,7 @@
     ?>
 
     <div class="sucesso">Formulário enviado com sucesso</div>
+    <div class="erro">Erro ao enviar formulário</div>
     <div class="overlay-loading"> 
         <img src="<?php echo INCLUDE_PATH; ?>img/loading.gif">
     </div>
@@ -62,6 +63,7 @@
                     <li><a href="<?php echo INCLUDE_PATH;?>">Inicio</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>servicos">Serviços</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH;?>noticias">Notícias</a></li>
                     <li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
@@ -73,6 +75,7 @@
                    <li><a href="<?php echo INCLUDE_PATH;?>">Inicio</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>servicos">Serviços</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH;?>noticias">Notícias</a></li>
                     <li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
@@ -89,9 +92,16 @@
                     include('pages/'.$url.'.php');
                 }else{
                     if($url != 'depoimentos' && $url != 'servicos'){
-                        $pagina404 = true;
-                        include('pages/404.php');
-                    }else{
+                       
+                        $urlPar = explode('/', $url)[0];
+
+                        if ($urlPar == 'noticias') {
+                            include('pages/noticias.php');
+                        }else {
+                            $pagina404 = true;
+                            include('pages/404.php');
+                        }
+                    }else{ 
                         include('pages/home.php');
                     }
                 }
@@ -118,6 +128,23 @@
         ?>
         <script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
         <?php } ?>
+
+        <?php if (isset($url) && is_array($url) && in_array('noticias', $url)) {
+           
+        ?>
+
+        <script>
+        $(document).ready(function() {
+            $('select[name="categoria"]').change(function() {
+                var selectedCategory = $(this).val();
+                if (selectedCategory) {
+                    location.href = "<?php echo INCLUDE_PATH; ?>noticias/" + selectedCategory;
+                }
+            });
+        });
+        </script>
+
+        <?php  } ?>
         
 
         <?php
